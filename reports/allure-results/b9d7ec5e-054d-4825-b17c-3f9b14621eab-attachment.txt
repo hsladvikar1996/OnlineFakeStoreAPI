@@ -1,0 +1,13 @@
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): fakestoreapi.com:443
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 https://fakestoreapi.com:443 "POST /products HTTP/1.1" 201 141
+[32mINFO    [0m root:conftest.py:20 REQUEST: POST https://fakestoreapi.com//products
+[32mINFO    [0m root:conftest.py:21 Request Headers: {'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '142', 'Content-Type': 'application/json'}
+[32mINFO    [0m root:conftest.py:23 Request Body: b'{"title": "Calvin Velazquez", "price": "192-9227 Massa Street", "description": 985, "category": "electronics", "image": "https://walmart.com"}'
+[32mINFO    [0m root:conftest.py:24 RESPONSE Status: 201
+[32mINFO    [0m root:conftest.py:25 Response Headers: {'Date': 'Fri, 05 Dec 2025 17:00:24 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '141', 'Connection': 'keep-alive', 'access-control-allow-origin': '*', 'etag': 'W/"8d-g9aP00GT8VASZxud/Gsg99WGM0A"', 'x-powered-by': 'Express', 'cf-cache-status': 'DYNAMIC', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=S1Zx9mcXUGnSEy750nGWhcuas%2B2P9oy6rHYiIeBoIRDEYxbxNsp25yQCKu67kLFaDD24AAWEJ9gqqs4cOpMJyGH5IlX99wGsw8OJvxYb5qoTkqTJ9OLPjlVDUhs%3D"}]}', 'Server': 'cloudflare', 'CF-RAY': '9a95197d4cb0e1c9-MRS', 'alt-svc': 'h3=":443"; ma=86400'}
+[32mINFO    [0m root:conftest.py:27 Response Body: {'id': 21, 'title': 'Calvin Velazquez', 'price': '192-9227 Massa Street', 'description': 985, 'image': 'https://walmart.com', 'category': 'electronics'}
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): fakestoreapi.com:443
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 https://fakestoreapi.com:443 "DELETE /products/21 HTTP/1.1" 200 None
+[32mINFO    [0m root:conftest.py:20 REQUEST: DELETE https://fakestoreapi.com//products/21
+[32mINFO    [0m root:conftest.py:21 Request Headers: {'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'}
+[32mINFO    [0m root:conftest.py:29 Response Body:

@@ -1,0 +1,13 @@
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): fakestoreapi.com:443
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 https://fakestoreapi.com:443 "POST /products HTTP/1.1" 201 129
+[32mINFO    [0m root:conftest.py:20 REQUEST: POST https://fakestoreapi.com//products
+[32mINFO    [0m root:conftest.py:21 Request Headers: {'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '130', 'Content-Type': 'application/json'}
+[32mINFO    [0m root:conftest.py:23 Request Body: b'{"title": "Neville Preston", "price": "901-1373 Ut Road", "description": 649, "category": "beauty", "image": "http://nytimes.com"}'
+[32mINFO    [0m root:conftest.py:24 RESPONSE Status: 201
+[32mINFO    [0m root:conftest.py:25 Response Headers: {'Date': 'Fri, 05 Dec 2025 17:00:22 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '129', 'Connection': 'keep-alive', 'access-control-allow-origin': '*', 'etag': 'W/"81-esU+5K8LS+5jdVU5Ox+dg2rRpUw"', 'x-powered-by': 'Express', 'cf-cache-status': 'DYNAMIC', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=Akp4KPCXgbK8i%2BxjYPWqSp0nSn6H6JaKwlIT8iSbOp4Bi8uVF%2F%2FCoI22K%2BvN3Ix2AijuJi8X9D23ziHMH8gfQEBuvXdR9E4pSR1likVR995XGtMzke19lOwW"}]}', 'Server': 'cloudflare', 'CF-RAY': '9a95197379c470e8-MRS', 'alt-svc': 'h3=":443"; ma=86400'}
+[32mINFO    [0m root:conftest.py:27 Response Body: {'id': 21, 'title': 'Neville Preston', 'price': '901-1373 Ut Road', 'description': 649, 'image': 'http://nytimes.com', 'category': 'beauty'}
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): fakestoreapi.com:443
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 https://fakestoreapi.com:443 "DELETE /products/21 HTTP/1.1" 200 None
+[32mINFO    [0m root:conftest.py:20 REQUEST: DELETE https://fakestoreapi.com//products/21
+[32mINFO    [0m root:conftest.py:21 Request Headers: {'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'}
+[32mINFO    [0m root:conftest.py:29 Response Body:

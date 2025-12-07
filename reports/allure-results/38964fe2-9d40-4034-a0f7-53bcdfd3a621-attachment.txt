@@ -1,0 +1,13 @@
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): fakestoreapi.com:443
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 https://fakestoreapi.com:443 "POST /products HTTP/1.1" 201 133
+[32mINFO    [0m root:conftest.py:20 REQUEST: POST https://fakestoreapi.com//products
+[32mINFO    [0m root:conftest.py:21 Request Headers: {'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '134', 'Content-Type': 'application/json'}
+[32mINFO    [0m root:conftest.py:23 Request Body: b'{"title": "Unity Hurley", "price": "754-5228 Imperdiet St.", "description": 829, "category": "furniture", "image": "http://yahoo.com"}'
+[32mINFO    [0m root:conftest.py:24 RESPONSE Status: 201
+[32mINFO    [0m root:conftest.py:25 Response Headers: {'Date': 'Fri, 05 Dec 2025 17:00:21 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '133', 'Connection': 'keep-alive', 'access-control-allow-origin': '*', 'etag': 'W/"85-5Triy68UHMAHx48vmWWzmooba7U"', 'x-powered-by': 'Express', 'cf-cache-status': 'DYNAMIC', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=baJB7UoRhvHiCnk1%2Bp6%2B%2BzduYrgfZ6AMKlpR%2Fo3A%2BnIERV4paudTfuXeKWc8vIBkKcpe9XJyMXbxpmf7SJ6SDrK4Hdpkv9HqjHELwuNEA1%2BfwfwogcXecz7%2FAPA%3D"}]}', 'Server': 'cloudflare', 'CF-RAY': '9a951969bc61e1f1-MRS', 'alt-svc': 'h3=":443"; ma=86400'}
+[32mINFO    [0m root:conftest.py:27 Response Body: {'id': 21, 'title': 'Unity Hurley', 'price': '754-5228 Imperdiet St.', 'description': 829, 'image': 'http://yahoo.com', 'category': 'furniture'}
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): fakestoreapi.com:443
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 https://fakestoreapi.com:443 "DELETE /products/21 HTTP/1.1" 200 None
+[32mINFO    [0m root:conftest.py:20 REQUEST: DELETE https://fakestoreapi.com//products/21
+[32mINFO    [0m root:conftest.py:21 Request Headers: {'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'}
+[32mINFO    [0m root:conftest.py:29 Response Body:
