@@ -1,3 +1,5 @@
+import shutil
+import time
 import pytest
 from routes.Routes import Routes
 from utils.ConfigReader import ReadConfig
@@ -7,13 +9,8 @@ import requests
 
 
 LOG_FILE = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "logs", "test_logging.log"))
-logging.basicConfig(
-filename=LOG_FILE,
-level=logging.DEBUG,
-format="%(asctime)s | %(levelname)s | %(message)s",
-filemode='a'    # Add data to log file each run
-)
-logger = logging.getLogger()
+
+logger= logging.getLogger()
 
 def log_request_response(response: requests.Response):
     req = response.request
@@ -34,7 +31,17 @@ def log_request_response(response: requests.Response):
 def setup():
     # base_url = Routes.BASE_URL
     # config_reader= ReadConfig
-    original_request= requests.Session.request
+    # Initialize logging after cleanup
+    logging.basicConfig(
+        filename=LOG_FILE,
+        level=logging.DEBUG,
+        format="%(asctime)s | %(levelname)s | %(message)s",
+        filemode='a'  # Add data to log file each run
+    )
+    global logger
+    logger = logging.getLogger()
+
+    original_request = requests.Session.request
 
     def custom_request(self, method, url, **kwargs):
         response = original_request(self, method, url, **kwargs)
@@ -46,3 +53,33 @@ def setup():
 
     yield {"base_url":Routes.BASE_URL, "config_reader":ReadConfig}
 
+def safe_delete_folder(folder_path, retries=3, delay=1):
+    for attempt in range(retries):
+        try:
+            if os.path.exists(folder_path):
+                shutil.rmtree(folder_path)
+            return
+        except PermissionError:
+            if attempt < retries - 1:
+                time.sleep(delay)
+            else:
+                raise
+
+@pytest.fixture(scope="session", autouse=True)
+def clear_old_reports():
+    # Force close all logging file handlers FIRST
+    logging.shutdown()
+
+    folders_to_clear = [
+        "reports",
+        "logs",
+        "allure-results"
+    ]
+
+    for folder in folders_to_clear:
+        try:
+            safe_delete_folder(folder)
+            os.makedirs(folder, exist_ok=True)
+            print(f"✅ Cleared folder: {folder}")
+        except Exception as e:
+            print(f"⚠️ Could not clear {folder}: {e}")

@@ -1,3 +1,5 @@
+'''All the Endpoint we keep in the Routes.py '''
+
 class Routes:
     BASE_URL = "https://fakestoreapi.com/"
 
