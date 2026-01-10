@@ -1,5 +1,4 @@
 import random
-from itertools import product
 import datetime
 from faker import Faker
 from datamodels.Product import Product

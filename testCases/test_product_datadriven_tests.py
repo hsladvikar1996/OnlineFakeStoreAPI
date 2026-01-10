@@ -4,11 +4,12 @@ import json
 from routes.Routes import Routes
 from datamodels.Product import Product
 from utils.DataProviders import read_json_data
+from utils.DataProviders import read_excel_data
 import os
 
 #Get file path
 path = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "testData", "product.json"))
-
+# xlpath= os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "testData", "product.xlsx"))
 
 class TestProductAPI:
     @pytest.fixture(autouse=True)
@@ -18,8 +19,9 @@ class TestProductAPI:
 
     @pytest.mark.regression
     @pytest.mark.parametrize("order_data", read_json_data(path))
+    # @pytest.mark.parametrize("order_data", read_excel_data(xlpath, sheet_name="Sheet1"))
     def test_add_new_delete_product(self,order_data):
-        product_data= order_data[0]
+        product_data= order_data[0]         #to run for excel remove [0]
 
         #Extract fields
         title= product_data["title"]

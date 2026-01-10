@@ -89,6 +89,7 @@ class TestProductAPI:
         data = response.json()
         # print(json.dumps(data, indent=4))
         assert data["title"] == self.payload.__dict__['title']
+        # product_id= data["id"]  #make it global if want to pass in other function
 
     @pytest.mark.regression
     @pytest.mark.run(order=9)
